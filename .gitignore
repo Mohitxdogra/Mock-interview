@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+#environment variable jisko ignore rkna yaha
+.env
+.env.*
