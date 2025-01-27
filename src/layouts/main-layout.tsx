@@ -1,7 +1,7 @@
-import {Container} from "@/components/container"
-import Footer from "@/components/footer"
-import Header from "@/components/header"
-import { Outlet } from "react-router-dom"
+import {Container} from "@/components/container";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { Outlet } from "react-router-dom";
 
 export const MainLayout = () => {
   return (
@@ -13,10 +13,10 @@ export const MainLayout = () => {
   <main className="flex-grow">
   <Outlet />
   </main>
-</Container>
+           </Container>
 
 <Footer />
 
     </div>
-  )
-}
+  );
+};
