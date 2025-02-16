@@ -1,14 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
 export const MarqueImg = ({ img }: {img: string}) => {
   return (
     <img
