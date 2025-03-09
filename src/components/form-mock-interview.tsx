@@ -2,7 +2,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Interview } from "@/types";
-
 import { CustomBreadCrumb } from "./custom-bread-crumb";
 import { Description } from "@radix-ui/react-dialog";
 import { useEffect, useState } from "react";
@@ -11,7 +10,7 @@ import { toast } from "sonner";
 import { Headings } from "./headings";
 import { useNavigate } from "react-router-dom"; // Added missing import
 import { Button } from "./ui/button";
-import { Trash, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 interface FormMockInterviewProps {
   initialData: Interview | null;
@@ -79,16 +78,17 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
   return (
     <div className="w-full flex-col space-y-4">
       <CustomBreadCrumb
-        breadCrumbPage="Mock Interview"
-        breadCrumpItems={[{ label: "Mock Interviews", link: "/generate" }]}
+        breadCrumbPage={breadcrumbPage}
+        breadCrumbItems={[{ label: "Mock Interviews", link: "/generate" }]}
       />
 
       <div className="mt-4 flex items-center justify-between"></div>
       <Headings title={title} isSubHeading />
       {initialData && (
-    <Button>
-        <Trash2 className="w-5 h-5 mr-2" />    
-    }
+        <Button size={"icon"} variant={"ghost"}>
+          <Trash2 className="min-w-4 min-h-4 text-red-500" />    
+        </Button>
+      )}
     </div>
   );
 };

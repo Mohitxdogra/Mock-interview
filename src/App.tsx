@@ -36,6 +36,8 @@ const App = () => {
                 <Route path=":interviewId" element={<CreateEditPage/>}  />
                
                 </Route>
+                
+
         </Route> 
       </Routes>
     </Router>

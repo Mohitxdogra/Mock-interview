@@ -22,11 +22,15 @@ const HomePage = () => {
             Interview Preparation
           </h2>
 
-          <p className="mt-4 text-muted-foreground text-sm">
-            Elevate your interview skills and skyrocket your success rate with
-            cutting-edge AI-driven insights. Prepare smarter, practice
-            effectively, and stand out from the crowd.
-          </p>
+          <div className="p-4 bg-gray-100 rounded-md shadow-lg mt-4">
+  <p className="text-center text-base text-gray-800 md:text-lg font-semibold">
+    Elevate your interview skills and skyrocket your success rate with 
+    cutting-edge AI-driven insights. Prepare smarter, practice 
+    effectively, and stand out from the crowd.
+  </p>
+</div>
+
+
         </div>
 
         {/* Stats Section */}
@@ -46,12 +50,12 @@ const HomePage = () => {
         </div>
 
         {/* Hero Image Section */}
-        <div className="w-full mt-4 rounded-xl bg-gray-100 h-[420px] drop-shadow-md overflow-hidden relative">
-          <img
-            src="/assets/img/hero.jpg"
-            alt="Interview Preparation"
-            className="w-full h-full object-cover"
-          />
+        <div className="w-full mt-4 rounded-xl bg-gray-100 h-[420px] md:h-[500px] drop-shadow-md overflow-hidden relative">
+  <img
+    src="/assets/img/hero.jpg"
+    alt="Interview Preparation"
+    className="w-full h-full object-cover object-center md:object-top"
+  />
 
           <div className="absolute top-4 left-4 px-4 py-2 rounded-md bg-white/40 backdrop-blur-md">
             Mock Ready&copy;
