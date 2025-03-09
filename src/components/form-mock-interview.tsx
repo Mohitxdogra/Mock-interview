@@ -92,4 +92,3 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
     </div>
   );
 };
-*/hekkk*/ 
