@@ -77,7 +77,7 @@ export const Footer = () => {
               {/* <FooterLink to="/serew-prepvices/intervi">Interview Preparation</FooterLink> */}
               <FooterLink to="/serew-prepvices/intervi">Interview Preparation</FooterLink>
               <FooterLink to="/services/career-coaching">Career Coaching</FooterLink>
-              <FooterLink to="/services/resume-building">Resume Building</FooterLink>
+              <FooterLink to="/resume-builder">Resume Building</FooterLink>
             </ul>
           </div>
 

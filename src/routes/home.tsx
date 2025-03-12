@@ -22,11 +22,11 @@ const HomePage = () => {
             Interview Preparation
           </h2>
 
-          <div className="p-4 bg-gray-100 rounded-md shadow-lg mt-4">
-  <p className="text-center text-base text-gray-800 md:text-lg font-semibold">
+<div className="p-6 bg-white rounded-xl shadow-xl mt-6 transition-all hover:shadow-2xl">
+  <p className="text-center text-lg text-gray-900 font-semibold leading-relaxed">
     Elevate your interview skills and skyrocket your success rate with 
-    cutting-edge AI-driven insights. Prepare smarter, practice 
-    effectively, and stand out from the crowd.
+    <span className="text-blue-600"> cutting-edge AI-driven insights.</span>  
+    Prepare smarter, practice effectively, and stand out from the crowd.
   </p>
 </div>
 
