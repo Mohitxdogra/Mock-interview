@@ -6,8 +6,7 @@ import { NavigationRoutes } from "./Navigation-routes";
 import { NavLink } from "react-router-dom";
 import { ProfileContainer } from "./profile-container";
 import { ToggleContainer } from "./toggle-container";
-
-
+import ThemeSwitcher from "./ThemeSwitcher"; 
 
 const Header = () => {
   const { userId } = useAuth();
@@ -35,18 +34,17 @@ const Header = () => {
             )}
           </nav>
 
-         
+          {/* Right-side controls */}
           <div className="ml-auto flex items-center gap-6">
-        {/*profile section */}
-       <ProfileContainer/>
+            {/* Profile Section */}
+            <ProfileContainer />
 
+            {/* Dark Mode Toggle */}
+            <ThemeSwitcher />
 
-
-
-
-        {/*mobile toggle section */}
-      <ToggleContainer/>
-        </div> 
+            {/* Mobile Toggle Section */}
+            <ToggleContainer />
+          </div> 
         </div>
       </Container>
     </header>

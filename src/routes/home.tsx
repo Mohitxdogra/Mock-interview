@@ -100,7 +100,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
           <div className="col-span-1 md:col-span-3">
             <img
-              src="/assets/img/office.jpg"
+              src="/assets/img/office.jpeg"
               alt="AI Interview Preparation"
               className="w-full max-h-96 rounded-md object-cover"
             />
