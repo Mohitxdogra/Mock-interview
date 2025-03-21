@@ -75,7 +75,7 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg text-white mb-4">Services</h3>
             <ul className="space-y-2">
               {/* <FooterLink to="/serew-prepvices/intervi">Interview Preparation</FooterLink> */}
-              <FooterLink to="/serew-prepvices/intervi">Interview Preparation</FooterLink>
+              <FooterLink to="/generate">Interview Preparation</FooterLink>
               <FooterLink to="/services/career-coaching">Career Coaching</FooterLink>
               <FooterLink to="/resume-builder">Resume Building</FooterLink>
             </ul>

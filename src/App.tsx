@@ -10,8 +10,11 @@ import Homepage from "@/routes/home";
 import { Generate } from "./components/generate";
 import { Dashboard } from "./routes/dashboard";
 import { CreateEditPage } from "./routes/create-edit-page";
-import ResumeBuilder from "./components/resume-builder";
+import ResumeBuilder from "@/components/Resume/resume-builder";
 import ContactUs from "@/routes/ContactUs";
+import { MockLoadPage } from "./routes/mock-load-page";
+import { MockInterviewPage } from "./routes/mock-interview-page.tsx";
+import { Feedback } from "./routes/feedback.tsx";
 
 const App = () => {
   return (
@@ -20,7 +23,7 @@ const App = () => {
         {/* public routes */}
         <Route element={<PublicLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="/resume-builder" element={<ResumeBuilder />} />
+       
           <Route path="/contact" element={<ContactUs />} /> 
         </Route>
 
@@ -31,11 +34,20 @@ const App = () => {
         </Route>
 
         {/* protected routes (example) */}
+        <Route element={<ProtectRoutes> <ResumeBuilder /> </ProtectRoutes>} path="/resume-builder" />
         <Route element={<ProtectRoutes> <MainLayout /> </ProtectRoutes>}> 
           {/* Protected Routes */}
           <Route element={<Generate />} path="/generate/">
             <Route index element={<Dashboard />} />
             <Route path=":interviewId" element={<CreateEditPage />} />
+            <Route path="interview/:interviewId" element={<MockLoadPage />}  />
+            <Route 
+            path="interview/:interviewId/start" 
+            element={<MockInterviewPage />} 
+             />
+        <Route path="feedback/:interviewId" element={<Feedback/>}
+         />
+
           </Route>
         </Route> 
       </Routes>
