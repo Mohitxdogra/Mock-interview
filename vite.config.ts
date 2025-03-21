@@ -1,16 +1,35 @@
-import * as path from "node:path"; // ✅ Node.js ke liye sahi import
+import * as path from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import viteCompression from "vite-plugin-compression";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    viteCompression(), // ✅ Gzip/Brotli compression enable
+  ],
   server: {
-    host: "0.0.0.0", // ✅ Local network access allow karega
+    host: "0.0.0.0",
+    port: 5173,
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // ✅ Fix: Path properly resolve hoga
+      "@": path.resolve(__dirname, "src"), // ✅ Alias setup
+    },
+  },
+  build: {
+    chunkSizeWarningLimit: 500, // ⚠️ Warning limit adjust
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react")) return "react-vendor"; // React alag rakho
+            if (id.includes("lodash")) return "lodash-vendor"; // Lodash alag rakho
+            if (id.includes("firebase")) return "firebase-vendor"; // Firebase alag rakho
+            return "vendor"; // Baaki third-party libraries ek saath
+          }
+        },
+      },
     },
   },
 });

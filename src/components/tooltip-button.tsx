@@ -25,7 +25,7 @@ import {
     buttonVariant?: ButtonVariant;
     buttonClassName?: string;
     delay?: number;
-    disbaled?: boolean;
+    disabled?: boolean;
     loading?: boolean;
   }
   
@@ -36,18 +36,18 @@ import {
     buttonVariant = "ghost",
     buttonClassName = "",
     delay = 0,
-    disbaled = false,
+    disabled = false,
     loading = false,
   }: TooltipButtonProps) => {
     return (
       <TooltipProvider delayDuration={delay}>
         <Tooltip>
           <TooltipTrigger
-            className={disbaled ? "cursor-not-allowed" : "cursor-pointer"}
+            className={disabled ? "cursor-not-allowed" : "cursor-pointer"}
           >
             <Button
               size={"icon"}
-              disabled={disbaled}
+              disabled={disabled}
               variant={buttonVariant}
               className={buttonClassName}
               onClick={onClick}
