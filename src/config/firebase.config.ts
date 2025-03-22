@@ -13,6 +13,7 @@ const firebaseConfig = {
 // Ensure Firebase is initialized only once
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
+// Firestore instance
 const db = getFirestore(app);
 
-export { db };
+export { db, app };

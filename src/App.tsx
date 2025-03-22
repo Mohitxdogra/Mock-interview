@@ -15,7 +15,8 @@ import ContactUs from "@/routes/ContactUs";
 import { MockLoadPage } from "./routes/mock-load-page";
 import { MockInterviewPage } from "./routes/mock-interview-page.tsx";
 import { Feedback } from "./routes/feedback.tsx";
-
+import ServicesPage from "./routes/Services.tsx";  
+import About from "@/routes/AboutUs.tsx";
 const App = () => {
   return (
     <Router>
@@ -23,8 +24,9 @@ const App = () => {
         {/* public routes */}
         <Route element={<PublicLayout />}>
           <Route index element={<Homepage />} />
-       
           <Route path="/contact" element={<ContactUs />} /> 
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<About />} />
         </Route>
 
         {/* authentication routes */}
@@ -37,19 +39,16 @@ const App = () => {
         <Route element={<ProtectRoutes> <ResumeBuilder /> </ProtectRoutes>} path="/resume-builder" />
         <Route element={<ProtectRoutes> <MainLayout /> </ProtectRoutes>}> 
         
-        
           {/* all the Protected Routes */}
           <Route element={<Generate />} path="/generate/">
             <Route index element={<Dashboard />} />
             <Route path=":interviewId" element={<CreateEditPage />} />
             <Route path="interview/:interviewId" element={<MockLoadPage />}  />
             <Route 
-            path="interview/:interviewId/start" 
-            element={<MockInterviewPage />} 
-             />
-        <Route path="feedback/:interviewId" element={<Feedback/>}
-         />
-
+              path="interview/:interviewId/start" 
+              element={<MockInterviewPage />} 
+            />
+            <Route path="feedback/:interviewId" element={<Feedback />} />
           </Route>
         </Route> 
       </Routes>
